@@ -1,10 +1,15 @@
 import React from 'react'
-import { Text } from 'react-native'
+import { useState } from 'react'
+import { View,SafeAreaView,FlatList,Text } from 'react-native'
+import { HomeHeader,FocusesStatusBar,NFTCard } from '../components'
+
 
 const Home = () => {
   return (
-    <Text>Home</Text>
+    <SafeAreaView  style={{flex:1}}>
+      <HomeHeader></HomeHeader>
+    </SafeAreaView>
   )
 }
 
-export default Home
+export default Home 
