@@ -47,7 +47,8 @@ const NFTCard = ({ data }) => {
           subTitleSize={SIZES.small}
         />
       </View>
-
+      
+      {/* price button */}
       <View
         style={{
           marginBottom: SIZES.font,
