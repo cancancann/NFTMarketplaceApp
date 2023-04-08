@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useState } from "react";
-import { View, SafeAreaView, FlatList } from "react-native";
+import { View, SafeAreaView, FlatList, StatusBar } from "react-native";
 import { FocusedStatusBar, HomeHeader, NFTCard } from "../components";
 import { COLORS, NFTData } from "../constants";
+import { useFocusEffect } from "@react-navigation/native";
 
 const Home = () => {
   const [nftData, setNftData] = useState(NFTData);
@@ -14,13 +15,19 @@ const Home = () => {
       item.name.toLowerCase().includes(value.toLowerCase())
     );
 
-    if(filtered.length){
+    if (filtered.length) {
       setNftData(filtered);
-    } else{
+    } else {
       setNftData(nftData);
     }
-
   };
+
+  //StatusBarConfig
+  useFocusEffect(
+    useCallback(() => {
+      StatusBar.setBarStyle("dark-content");
+    })
+  );
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
